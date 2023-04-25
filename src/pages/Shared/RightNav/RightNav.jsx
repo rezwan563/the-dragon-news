@@ -8,7 +8,7 @@ import "./RightNav.css"
 const RightNav = () => {
     return (
         <div>
-            <h4>Right Nav</h4>
+            <h4 className="my-4">Right Nav</h4>
             <Button className="mb-2" variant="outline-primary"><FaGoogle /> Login with google</Button>
             <Button variant="outline-secondary"><FaGithub /> Login with github</Button>
             <div className="my-4">
