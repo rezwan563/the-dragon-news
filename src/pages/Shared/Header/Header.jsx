@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 const Header = () => {
     return (
         <Container>
-            <div className="text-center">
+            <div className="text-center mt-4">
                 <img src={logo} alt="" />
                 <p className="text-secondary"><small>Journalism without fear or favour</small></p>
                 <p>{moment().format('LLLL')}</p>
