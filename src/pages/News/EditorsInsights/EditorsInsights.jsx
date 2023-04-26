@@ -1,35 +1,17 @@
-// import React from 'react';
-
-import { useEffect, useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import first from  '../../../assets/1.png'
-import second from  '../../../assets/2.png'
-import third from  '../../../assets/3.png'
+// import first from  '../../../asset/1.png'
+// import second from  '../../../assets/2.png'
+// import third from  '../../../assets/3.png'
+import editorsInsight1 from '../../../assets/editorsInsight1.png';
+import editorsInsight2 from '../../../assets/editorsInsight2.png';
+import editorsInsight3 from '../../../assets/editorsInsight3.png';
 
-const LeftNav = () => {
-    const [categories, setCategories] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/categories')
-            .then(res => res.json())
-            .then(data => setCategories(data))
-            .catch(error => console.log(error));
-    }, [])
+const EditorsInsights = () => {
     return (
-        <div>
-            <h4>All Categories</h4>
-            <div className="ps-4 ">
-                {
-                    categories.map(category => <p key={category.id}>
-                        <Link to={`/category/${category.id}`} className="text-decoration-none text-black">{category.name}</Link>
-                    </p>)
-                }
-            </div>
-            <Row xs={1} className="g-4 mt-4">
+        <Row xs={1} md={2} lg={3} className="g-4 mt-4">
                 <Col>
                     <Card>
-                        <Card.Img variant="top" src={first} />
+                        <Card.Img variant="top" src={editorsInsight1} />
                         <Card.Body>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
@@ -42,7 +24,7 @@ const LeftNav = () => {
                 </Col>
                 <Col>
                     <Card>
-                        <Card.Img variant="top" src={second} />
+                        <Card.Img variant="top" src={editorsInsight2} />
                         <Card.Body>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
@@ -55,7 +37,7 @@ const LeftNav = () => {
                 </Col>
                 <Col>
                     <Card>
-                        <Card.Img variant="top" src={third} />
+                        <Card.Img variant="top" src={editorsInsight3} />
                         <Card.Body>
                             <Card.Title>Card title</Card.Title>
                             <Card.Text>
@@ -66,10 +48,9 @@ const LeftNav = () => {
                         </Card.Body>
                     </Card>
                 </Col>
-
-            </Row>
-        </div>
+            
+        </Row>
     );
 };
 
-export default LeftNav;
+export default EditorsInsights;
