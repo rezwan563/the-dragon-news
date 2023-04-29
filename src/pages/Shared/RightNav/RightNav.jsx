@@ -36,7 +36,7 @@ const RightNav = () => {
         <div>
             <h4 className="my-4">Right Nav</h4>
             <Button className="mb-2" onClick={handleGoogleLogin} variant="outline-primary"><FaGoogle /> Login with google</Button>
-            <Button onclick={handleGithubLogin}variant="outline-secondary"><FaGithub /> Login with github</Button>
+            <Button onClick={handleGithubLogin}variant="outline-secondary"><FaGithub /> Login with github</Button>
             <div className="my-4">
                 <h4>Find us on</h4>
                 <ListGroup>

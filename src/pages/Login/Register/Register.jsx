@@ -6,6 +6,8 @@ import { AuthContext } from "../../../providers/AuthProvider";
 const Register = () => {
     const { user, createUser, emailVerification, updateInfo } = useContext(AuthContext)
     const [success, setSuccess] = useState("");
+    const [accepted, setAccepted] = useState(false);
+    
 
     const handleRegister = (event) => {
         event.preventDefault();
@@ -18,7 +20,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const newUser = result.user;
-                
+
                 // console.log(newUser);
                 alert("Successful user creation")
                 emailVerification()
@@ -37,9 +39,12 @@ const Register = () => {
             .catch(error => {
                 console.error(error);
             })
-
-
     }
+
+    const handleCheck = (event) =>{
+        setAccepted(event.target.checked);
+    }
+    
     return (
         <Container className="w-25 mx-auto">
             <h2>Please Register</h2>
@@ -73,10 +78,13 @@ const Register = () => {
                             success
                         }
                     </Form.Text>
-                    <Form.Check type="checkbox" name="accept" label="Accept Terms and Conditions" required />
+                    <Form.Check
+                        onClick={handleCheck}
+                        type="checkbox" name="accept" label="Accept Terms and Conditions" required />
                 </Form.Group>
                 <Button
-                    variant="primary" type="submit">
+                    disabled={!accepted}
+                    variant="primary"  type="submit">
                     Register
                 </Button>
                 <br />
