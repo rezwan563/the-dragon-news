@@ -1,0 +1,7 @@
+.avatar-img{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: 5px solid rgb(67, 219, 67)
+}
